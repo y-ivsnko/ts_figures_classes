@@ -18,7 +18,7 @@ export class Triangle implements Figure {
     public c: number,
   ) {
     if (this.a <= 0 || this.b <= 0 || this.c <= 0) {
-      throw new Error('The datas is less 0');
+      throw new Error('All triangle sides must be positive numbers');
     }
 
     const maxSide: number = Math.max(this.a, this.b, this.c);
