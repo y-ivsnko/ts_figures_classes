@@ -17,19 +17,15 @@ export class Triangle implements Figure {
     public b: number,
     public c: number,
   ) {
-    if (
-      this.a + this.b <= this.c ||
-      this.a + this.c <= this.b ||
-      this.b + this.c <= this.a
-    ) {
-      throw new Error('The datas incorrect');
+    if (this.a <= 0 || this.b <= 0 || this.c <= 0) {
+      throw new Error('The datas is less 0');
     }
 
     const maxSide: number = Math.max(this.a, this.b, this.c);
     const sumOfSides: number = this.a + this.b + this.c - maxSide;
 
     if (sumOfSides <= maxSide) {
-      throw new Error('Invalid triangle size');
+      throw new Error('The provided sides cannot form a valid triangle');
     }
   }
 
